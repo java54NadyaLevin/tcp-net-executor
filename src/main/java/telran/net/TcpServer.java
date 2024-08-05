@@ -3,7 +3,6 @@ package telran.net;
 import java.net.*;
 import java.util.concurrent.*;
 
-
 import static telran.net.TcpConfigurationProperties.*;
 
 public class TcpServer implements Runnable {
@@ -23,11 +22,12 @@ public class TcpServer implements Runnable {
 		executor.shutdown();
 		try {
 			executor.awaitTermination(10, TimeUnit.SECONDS);
-			running = false;
+
 		} catch (InterruptedException e) {
 
 		}
-		
+		running = false;
+
 	}
 
 	private int getNumberOfThreads() {
